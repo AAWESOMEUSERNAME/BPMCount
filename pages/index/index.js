@@ -8,7 +8,7 @@ Page({
     count: 0,
     preTime: 0,
     tapButton: "开始",
-    skipN: true,
+    skipN: false,
     N: 0
   },
   onLoad: function () {},
