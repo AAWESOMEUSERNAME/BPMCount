@@ -20,7 +20,7 @@
     <view class="optionParams">
         <view wx:if="{{skipN}}" style="display:flex;flex-direction: row;">
             N =
-            <input type="number" placeholder="这是一个数字输入框" bindblur="inputN"/>
+            <input type="number" bindblur="inputN"/>
         </view>
     </view>
     <view class="QRCodes">
