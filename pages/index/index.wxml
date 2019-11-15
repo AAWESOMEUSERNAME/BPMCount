@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container" xmlns="http://www.w3.org/1999/html">
+    <view class="BPM">
+        <view class="bpmTitle">BPM:</view>
+        <view class="bpmValue">
+            {{bpmAvg}}
+        </view>
+    </view>
+    <view class="buttons">
+        <button style="border-style:solid;width: 300rpx;height: 50rpx" bindtap="reset">重置</button>
+        <button style="border-style:solid;width: 300rpx;height: 50rpx" bindtap="tap">{{tapButton}}</button>
+    </view>
+    <view class="options">
+        <checkbox-group bindchange="checkboxChange">
+            <label>
+                <checkbox value="skipN" checked="{{false}}"/>跳过前N次点击
+            </label>
+        </checkbox-group>
+    </view>
+    <view class="optionParams">
+        <view wx:if="{{skipN}}" style="display:flex;flex-direction: row;">
+            N =
+            <input type="number" placeholder="这是一个数字输入框" bindblur="inputN"/>
+        </view>
+    </view>
+    <view class="QRCodes">
+        <view style="display: flex;flex-direction: column;justify-content: center;align-content: center;text-align: center;margin-top: 30rpx">
+            改进意见
+            <image src="/const/img/author.jpg" style="margin-top:20rpx;height: 300rpx;width: 300rpx"/>
+        </view>
+    </view>
+    <text style="margin: 20rpx;text-align: center">这是一个
+        不会UI和前端的后端写的代码
+        |ू･ω･` )
+        丑是丑了点，将就用
+    </text>
+</view>
