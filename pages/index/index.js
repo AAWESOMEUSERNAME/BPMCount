@@ -4,7 +4,8 @@ const app = getApp();
 Page({
   data: {
     bpmAvg: 0.00,
-    bpmSum: 0.00,
+    bpmSingle: 0.00,
+    bpmArray: [],
     count: 0,
     preTime: 0,
     tapButton: "开始",
@@ -14,9 +15,16 @@ Page({
   onLoad: function () {},
   checkboxChange: function (e) {
     let checkBoxValues = e.detail.value;
-    this.setData({
-      skipN: checkBoxValues.includes("skipN")
-    });
+    if(checkBoxValues.includes("skipN")){
+      this.setData({
+        skipN: true
+      });
+    }else{
+      this.setData({
+        skipN: false,
+        N: 0
+      });
+    }
   },
   tap: function (e) {
     let nowTime = e.timeStamp/1000;
@@ -30,19 +38,25 @@ Page({
       });
       return;
     }
-
+    let bpmArray = this.data.bpmArray;
     let interval = nowTime - this.data.preTime;
     this.setData({preTime: nowTime});
     console.log("interval",interval);
-    let bpmSingTime = Math.floor(60*100/interval)/100;
-    console.log("bpmSingTime",bpmSingTime);
-    let bpmSum = this.data.bpmSum + bpmSingTime;
-    let bpmAvg = Math.floor(bpmSum*100/(count-N))/100;
+    let bpmSingle = Math.floor(60*100/interval)/100;
+    console.log("bpmSingTime",bpmSingle);
+    bpmArray.unshift(bpmSingle);
+    if(bpmArray.length >5){
+      bpmArray.pop();
+    }
+    console.log("array",bpmArray);
+    let bpmAvg = bpmArray.reduce((acc, val) => acc + val, 0) / bpmArray.length;
+    bpmAvg = Math.floor(bpmAvg*100)/100;
     this.setData({
       count: count+1,
       preTime: nowTime,
-      bpmSum: bpmSum,
-      bpmAvg: bpmAvg
+      bpmAvg: bpmAvg,
+      bpmSingle: bpmSingle,
+      bpmArray: bpmArray
     });
   },
   reset: function (e) {
@@ -51,6 +65,7 @@ Page({
       bpmSum: 0.00,
       count: 0,
       preTime: 0,
+      bpmArray: [],
       tapButton: "开始"
     });
   },
@@ -58,17 +73,9 @@ Page({
     this.setData({N:e.detail.value});
   },
   onShareAppMessage: function(res) {
-    let that = this;
     return {
       title: 'BPM计算器',
-      path: "/pages/index/index.js",
-      success: function(res) {
-          console.log("转发成功:" + JSON.stringify(res));
-          that.shareClick();
-      },
-      fail: function(res) {
-          console.log("转发失败:" + JSON.stringify(res));
-      }
+      path: "/pages/index/index"
     }
   }
 });

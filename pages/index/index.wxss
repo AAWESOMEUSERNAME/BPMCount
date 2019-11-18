@@ -16,6 +16,15 @@
   justify-content: center;
   align-items: start;
 }
+.BPMSingle{
+  width: 100%;
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 200rpx;
+  margin-top: 10rpx;
+}
 .bpmTitle{
   margin-left: 100rpx;
   margin-right: 100rpx;
@@ -29,12 +38,38 @@
   font-size: 150rpx;
   text-align: center;
 }
+.bpmAvg{
+  width: 80%;
+}
+.bpmArray{
+  background: #c8c8a9;
+  width: 20%;
+  font-size: 30rpx;
+}
+
 .buttons{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  margin-top: 50rpx;
   width: 100%;
 }
+.button-tap{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-reset{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c8c8a9;
+}
+
 .options{
   display: flex;
   flex-direction: column;
