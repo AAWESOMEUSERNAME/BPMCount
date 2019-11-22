@@ -16,6 +16,27 @@
   justify-content: center;
   align-items: start;
 }
+.bpmTitle{
+margin-left: 100rpx;
+margin-right: 100rpx;
+}
+.bpmValue{
+display: flex;
+flex-direction: row;
+justify-content: center;
+background: #b3ffc2;
+width: 100%;
+font-size: 150rpx;
+text-align: center;
+}
+.bpmAvg{
+width: 80%;
+}
+.bpmArray{
+background: #c8c8a9;
+width: 20%;
+font-size: 30rpx;
+}
 .BPMSingle{
   width: 100%;
   font-size: 40rpx;
@@ -25,26 +46,18 @@
   padding-left: 200rpx;
   margin-top: 10rpx;
 }
-.bpmTitle{
-  margin-left: 100rpx;
-  margin-right: 100rpx;
+.radio-container{
+  /*background: blueviolet;*/
+  margin-top: 20rpx;
+  /*margin-bottom: 10rpx;*/
 }
-.bpmValue{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background: #b3ffc2;
-  width: 100%;
-  font-size: 150rpx;
-  text-align: center;
+.radio-group{
+
 }
-.bpmAvg{
-  width: 80%;
-}
-.bpmArray{
-  background: #c8c8a9;
-  width: 20%;
-  font-size: 30rpx;
+.radio{
+  margin-top: 10rpx;
+  margin-left: 80rpx;
+  /*font-size: 30rpx;*/
 }
 
 .buttons{

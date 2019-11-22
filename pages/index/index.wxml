@@ -4,12 +4,20 @@
         <view class="bpmTitle">Average BPM:</view>
         <view class="bpmValue">
             <view class="bpmAvg">{{bpmAvg}}</view>
-            <view class="bpmArray">
-                <view wx:for="{{bpmArray}}">{{item}}</view>
-            </view>
+            <!--<view class="bpmArray">-->
+                <!--<view wx:for="{{bpmArray}}">{{item}}</view>-->
+            <!--</view>-->
         </view>
     </view>
     <view class="BPMSingle">Single BPM  :{{bpmSingle}}</view>
+    <view class="radio-container">
+        <radio-group class="radio-group" bindchange="radioChange">
+            <radio class = "radio" value="5" checked>Five times average</radio>
+            <radio class = "radio" value="10" >Ten times average</radio>
+            <radio class = "radio" value="15" >Fifteen times average</radio>
+            <!--<radio class = "radio" value="15" >Custom:<input style="length:50rpx" type="number" bindblur="changAvgNum"/></radio>-->
+        </radio-group>
+    </view>
     <view class="buttons">
         <button style="width: 100%;height: 200rpx;display: flex;align-items: center;justify-content: center;" bindtap="tap">{{tapButton}}</button>
         <button style="width: 100%;height: 50rpx;display: flex;align-items: center;justify-content: center;background: #a7dce0;" bindtap="reset">重置</button>

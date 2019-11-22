@@ -10,7 +10,8 @@ Page({
     preTime: 0,
     tapButton: "开始",
     skipN: false,
-    N: 0
+    N: 0,
+    avgNum: 5
   },
   onLoad: function () {},
   checkboxChange: function (e) {
@@ -45,7 +46,7 @@ Page({
     let bpmSingle = Math.floor(60*100/interval)/100;
     console.log("bpmSingTime",bpmSingle);
     bpmArray.unshift(bpmSingle);
-    if(bpmArray.length >5){
+    if(bpmArray.length > this.data.avgNum){
       bpmArray.pop();
     }
     console.log("array",bpmArray);
@@ -77,5 +78,10 @@ Page({
       title: 'BPM计算器',
       path: "/pages/index/index"
     }
+  },
+  radioChange: function (e) {
+    this.setData({
+      avgNum: e.detail.value
+    });
   }
 });
