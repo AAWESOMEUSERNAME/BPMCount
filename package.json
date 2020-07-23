@@ -1,0 +1,24 @@
+{
+  "name": "bpmcount",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AAWESOMEUSERNAME/BPMCount.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AAWESOMEUSERNAME/BPMCount/issues"
+  },
+  "homepage": "https://github.com/AAWESOMEUSERNAME/BPMCount#readme",
+  "devDependencies": {
+    "@miniprogram-i18n/gulp-i18n-locales": "^1.0.0-rc.10",
+    "@miniprogram-i18n/gulp-i18n-wxml": "^1.0.0-rc.9",
+    "gulp": "^4.0.2"
+  }
+}

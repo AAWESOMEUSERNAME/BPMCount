@@ -1,0 +1,56 @@
+<!-- bpm.wxml -->
+<view class="container" xmlns="http://www.w3.org/1999/html">
+    <view class="BPM">
+        <view class="bpmTitle">{{lang.title}}:</view>
+        <view class="bpmValue">
+            <view class="bpmAvg">{{bpmAvg}}</view>
+        </view>
+    </view>
+    <view class="BPMSingle">{{lang.singleResult}} : {{bpmSingle}}</view>
+    <view class="radio-container">
+        <radio-group class="radio-group" bindchange="radioChange">
+            <radio class="radio" value="5" checked>{{lang.average_five}}</radio>
+            <radio class="radio" value="10">{{lang.average_ten}}</radio>
+            <radio class="radio" value="15">{{lang.average_fifteen}}</radio>
+            <radio class="radio" value="-1">{{lang.average_custom}}</radio>
+        </radio-group>
+        <view class="custom-input-group" wx:if="{{ifCustomAvg}}">
+            <view class="custom-input-row">
+                {{lang.text_every}}
+                <input class = "num-input" type="number" bindblur="inputBeatInterval" />
+                {{lang.text_tap_once}}
+            </view>
+            <view class = "custom-input-row">
+                {{lang.text_every}}
+                <input class = "num-input" type="number" bindblur="inputAvgNum" />
+                {{lang.text_time}}{{lang.text_avg}}
+            </view >
+            <view class = "custom-input-row">
+                {{lang.text_skip}}
+                <input class = "num-input" type="number" bindblur="inputN" />
+                {{lang.text_time}}
+            </view >
+        </view>
+    </view>
+    <view class="buttons">
+        <button style="width: 100%;height: 200rpx;display: flex;align-items: center;justify-content: center;" bindtap="tap">
+            {{tapButton}}
+        </button>
+        <button style="width: 100%;height: 50rpx;display: flex;align-items: center;justify-content: center;background: #a7dce0;" bindtap="reset">
+            {{lang.reset}}
+        </button>
+    </view>
+    <!-- <view class="options">
+        <checkbox-group bindchange="checkboxChange">
+            <label>
+                <checkbox value="skipN" checked="{{false}}"/>{{lang.skipN}}
+            </label>
+        </checkbox-group>
+    </view>
+    <view class="optionParams">
+        <view wx:if="{{skipN}}" style="display:flex;flex-direction: row;">
+            N =
+            <input type="number" bindblur="inputN"/>
+        </view>
+    </view> -->
+</view>
