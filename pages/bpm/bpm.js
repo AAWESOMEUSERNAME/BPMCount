@@ -30,19 +30,19 @@ Page({
     })
   },
 
-  checkboxChange: function (e) {
-    let checkBoxValues = e.detail.value;
-    if (checkBoxValues.includes("skipN")) {
-      this.setData({
-        skipN: true
-      });
-    } else {
-      this.setData({
-        skipN: false,
-        N: 0
-      });
-    }
-  },
+  // checkboxChange: function (e) {
+  //   let checkBoxValues = e.detail.value;
+  //   if (checkBoxValues.includes("skipN")) {
+  //     this.setData({
+  //       skipN: true
+  //     });
+  //   } else {
+  //     this.setData({
+  //       skipN: false,
+  //       N: 0
+  //     });
+  //   }
+  // },
 
   tap: function (e) {
     let N = this.data.N;
@@ -115,6 +115,7 @@ Page({
     let value = e.detail.value
     this.setData({
       intervalBeat: 1,
+      N: 0,
       ifCustomAvg: value < 0,
       avgNum: value < 0 ? defaultAvgNum : e.detail.value
     });
